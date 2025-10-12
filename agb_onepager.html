@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGB - Jonas Hempel Videoediting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        h1 span {
+            color: #2174EE;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .language-toggle {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .lang-btn {
+            padding: 8px 24px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            color: #666;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: #2174EE;
+            color: #2174EE;
+        }
+
+        .lang-btn.active {
+            background: #2174EE;
+            color: white;
+            border-color: #2174EE;
+        }
+
+        .content-box {
+            background: white;
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #2174EE;
+            display: inline-block;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #444;
+            font-size: 1rem;
+        }
+
+        strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 15px;
+            }
+
+            .content-box {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="language-toggle">
+                <button class="lang-btn" data-lang="de">Deutsch</button>
+                <button class="lang-btn active" data-lang="en">English</button>
+            </div>
+            <h1 class="lang-de" style="display: none;">Allgemeine <span>Geschäftsbedingungen</span></h1>
+            <h1 class="lang-en">Terms and <span>Conditions</span></h1>
+            <p class="subtitle lang-de" style="display: none;">Jonas Hempel – Videoediting</p>
+            <p class="subtitle lang-en">Jonas Hempel – Video Editing</p>
+        </header>
+
+        <div class="content-box">
+            <div class="section lang-de" style="display: none;">
+                <h2>1. Geltungsbereich</h2>
+                <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen Jonas Hempel (im Folgenden „Videoeditor") und seinen Auftraggebern. Abweichende Bedingungen des Auftraggebers werden nur anerkannt, wenn sie schriftlich bestätigt wurden.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>1. Scope of Application</h2>
+                <p>These General Terms and Conditions apply to all contracts between Jonas Hempel (hereinafter referred to as "Video Editor") and his clients. Deviating terms of the client will only be recognized if confirmed in writing.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>2. Vertragsschluss</h2>
+                <p>Ein Vertrag kommt zustande, sobald der Auftraggeber die angebotene Leistung des Videoeditors ausdrücklich bestätigt – zum Beispiel per E-Mail, WhatsApp oder mündlich – und der Videoeditor die Annahme erklärt oder mit der Ausführung der Arbeiten beginnt.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>2. Contract Formation</h2>
+                <p>A contract is established once the client explicitly confirms the Video Editor's offered service – for example via email, WhatsApp, or verbally – and the Video Editor declares acceptance or begins executing the work.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>3. Leistungsumfang</h2>
+                <p>Der Videoeditor erbringt Dienstleistungen im Bereich Videoschnitt, Farbkorrektur, Animation und sonstiger Nachbearbeitung. Der genaue Leistungsumfang wird im jeweiligen Projekt individuell abgestimmt. Nach vollständiger Bezahlung erhält der Auftraggeber uneingeschränkte Nutzungsrechte an den erstellten Inhalten.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>3. Scope of Services</h2>
+                <p>The Video Editor provides services in video editing, color correction, animation, and other post-production work. The exact scope of services is individually agreed upon for each project. After full payment, the client receives unrestricted usage rights to the created content.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>4. Mitwirkungspflichten des Auftraggebers</h2>
+                <p>Der Auftraggeber verpflichtet sich, alle zur Durchführung des Projekts notwendigen Materialien rechtzeitig und in geeigneter Form bereitzustellen. Er bestätigt, dass er über alle erforderlichen Rechte an diesen Materialien verfügt und keine Rechte Dritter verletzt werden.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>4. Client Obligations</h2>
+                <p>The client commits to providing all materials necessary for project completion in a timely manner and suitable format. The client confirms having all required rights to these materials and that no third-party rights are violated.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>5. Korrekturen und Änderungen</h2>
+                <p>Zwei Korrekturschleifen sind im vereinbarten Preis enthalten. Weitere Änderungen werden nach Aufwand gesondert berechnet. Nach erfolgter Zahlung gilt das Projekt als abgeschlossen; spätere Anpassungen oder Änderungen sind ausgeschlossen.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>5. Corrections and Changes</h2>
+                <p>Two revision rounds are included in the agreed price. Additional changes will be charged separately based on effort. After payment is made, the project is considered complete; subsequent adjustments or changes are excluded.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>6. Vergütung und Zahlung</h2>
+                <p>Die Vergütung erfolgt nach Abschluss des Projekts und Rechnungserhalt. Zahlungen sind innerhalb von 14 Tagen nach Rechnungsstellung ohne Abzug fällig. Die Lieferung des finalen Materials kann bis zum Zahlungseingang zurückgehalten werden.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>6. Compensation and Payment</h2>
+                <p>Payment is due after project completion and invoice receipt. Payments are due within 14 days of invoicing without deductions. Delivery of final materials may be withheld until payment is received.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>7. Nutzungsrechte und Portfolio</h2>
+                <p>Mit vollständiger Bezahlung erhält der Auftraggeber uneingeschränkte Nutzungsrechte an den erstellten Videos. Der Videoeditor behält sich das Recht vor, abgeschlossene Projekte zu Referenzzwecken auf seiner Website, in sozialen Medien oder in Portfolio-Präsentationen zu zeigen.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>7. Usage Rights and Portfolio</h2>
+                <p>Upon full payment, the client receives unrestricted usage rights to the created videos. The Video Editor reserves the right to showcase completed projects for reference purposes on their website, social media, or portfolio presentations.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>8. Haftung</h2>
+                <p>Der Videoeditor haftet nur für Schäden, die durch vorsätzliches oder grob fahrlässiges Verhalten entstanden sind. Für Materialien, die vom Auftraggeber bereitgestellt werden, übernimmt der Videoeditor keine Haftung. Der Auftraggeber stellt den Videoeditor von sämtlichen Ansprüchen Dritter frei.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>8. Liability</h2>
+                <p>The Video Editor is only liable for damages resulting from intentional or grossly negligent behavior. The Video Editor assumes no liability for materials provided by the client. The client indemnifies the Video Editor against all third-party claims.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>9. Datenschutz</h2>
+                <p>Personenbezogene Daten werden ausschließlich zur Vertragserfüllung verarbeitet. Weitere Informationen werden in einer separaten Datenschutzerklärung bereitgestellt.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>9. Data Protection</h2>
+                <p>Personal data is processed exclusively for contract fulfillment. Further information is provided in a separate privacy policy.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>10. Schlussbestimmungen</h2>
+                <p>Es gilt deutsches Recht. Gerichtsstand ist Rostock. Sollte eine Bestimmung dieser AGB unwirksam sein, bleibt die Gültigkeit der übrigen Bestimmungen unberührt.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>10. Final Provisions</h2>
+                <p>German law applies. Place of jurisdiction is Rostock. Should any provision of these Terms and Conditions be invalid, the validity of the remaining provisions remains unaffected.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Jonas Hempel – Videoediting. <span class="lang-de" style="display: none;">Alle Rechte vorbehalten.</span><span class="lang-en">All rights reserved.</span></p>
+            <p style="margin-top: 10px;">
+                <a href="https://www.instagram.com/media.essentials/" target="_blank" style="color: #2174EE; text-decoration: none; font-weight: 600;">
+                    <svg style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    @media.essentials
+                </a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const deLang = document.querySelectorAll('.lang-de');
+        const enLang = document.querySelectorAll('.lang-en');
+
+        langButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                
+                langButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                if (lang === 'de') {
+                    deLang.forEach(el => el.style.display = '');
+                    enLang.forEach(el => el.style.display = 'none');
+                } else {
+                    deLang.forEach(el => el.style.display = 'none');
+                    enLang.forEach(el => el.style.display = '');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
