@@ -28,6 +28,7 @@
         header {
             text-align: center;
             margin-bottom: 50px;
+            position: relative;
         }
 
         h1 {
@@ -48,20 +49,21 @@
         }
 
         .language-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
             display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 30px;
+            gap: 5px;
         }
 
         .lang-btn {
-            padding: 8px 24px;
-            border: 2px solid #e0e0e0;
+            padding: 4px 12px;
+            border: 1px solid #e0e0e0;
             background: white;
-            color: #666;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            font-weight: 600;
+            color: #999;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -75,6 +77,52 @@
             background: #2174EE;
             color: white;
             border-color: #2174EE;
+        }
+
+        .tab-navigation {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tab-btn {
+            padding: 12px 0;
+            background: none;
+            border: none;
+            color: #666;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            color: #2174EE;
+        }
+
+        .tab-btn.active {
+            color: #2174EE;
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #2174EE;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
         }
 
         .content-box {
@@ -139,6 +187,12 @@
             h2 {
                 font-size: 1.2rem;
             }
+
+            .language-toggle {
+                position: static;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -155,7 +209,18 @@
             <p class="subtitle lang-en">Jonas Hempel – Video Editing</p>
         </header>
 
-        <div class="content-box">
+        <div class="tab-navigation">
+            <button class="tab-btn active" data-tab="agb">
+                <span class="lang-de" style="display: none;">AGB</span>
+                <span class="lang-en">Terms & Conditions</span>
+            </button>
+            <button class="tab-btn" data-tab="privacy">
+                <span class="lang-de" style="display: none;">Datenschutz</span>
+                <span class="lang-en">Privacy Policy</span>
+            </button>
+        </div>
+
+        <div class="content-box tab-content active" id="agb-content">
             <div class="section lang-de" style="display: none;">
                 <h2>1. Geltungsbereich</h2>
                 <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen Jonas Hempel (im Folgenden „Videoeditor") und seinen Auftraggebern. Abweichende Bedingungen des Auftraggebers werden nur anerkannt, wenn sie schriftlich bestätigt wurden.</p>
@@ -247,6 +312,116 @@
             </div>
         </div>
 
+        <div class="content-box tab-content" id="privacy-content">
+            <div class="section lang-de" style="display: none;">
+                <h2>1. Verantwortlicher</h2>
+                <p><strong>Verantwortlich für die Datenverarbeitung ist:</strong><br>
+                Jonas Hempel<br>
+                E-Mail: jonashempelb@gmx.de</p>
+            </div>
+            <div class="section lang-en">
+                <h2>1. Data Controller</h2>
+                <p><strong>Responsible for data processing:</strong><br>
+                Jonas Hempel<br>
+                Email: jonashempelb@gmx.de</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>2. Datenerhebung und -verwendung</h2>
+                <p>Wir erheben und verwenden personenbezogene Daten unserer Kunden ausschließlich zur Vertragserfüllung und zur Abwicklung der Projekte. Dazu gehören insbesondere: Name, Kontaktdaten (z. B. E-Mail, WhatsApp) und alle vom Kunden bereitgestellten Materialien.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>2. Data Collection and Usage</h2>
+                <p>We collect and use personal data from our clients exclusively for contract fulfillment and project execution. This includes in particular: name, contact details (e.g., email, WhatsApp), and all materials provided by the client.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>3. Verarbeitung von Videomaterial</h2>
+                <p>Im Rahmen der Projektdurchführung verarbeiten wir Videos, die personenbezogene Daten enthalten können (Gesichter, Stimmen etc.). Diese Daten werden ausschließlich für die Erstellung, Bearbeitung und Lieferung des vereinbarten Projekts verwendet.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>3. Processing of Video Material</h2>
+                <p>As part of project execution, we process videos that may contain personal data (faces, voices, etc.). This data is used exclusively for creating, editing, and delivering the agreed project.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>4. Kommunikation</h2>
+                <p>Wir nutzen WhatsApp zur Projektabsprache und zum Austausch von Material. Alle Nachrichten werden zur Nachvollziehbarkeit der Absprachen gespeichert.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>4. Communication</h2>
+                <p>We use WhatsApp for project coordination and material exchange. All messages are stored for the traceability of agreements.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>5. Speicherung und Löschung</h2>
+                <p>Kundendaten und Videomaterial werden lokal auf einer externen Festplatte gespeichert.</p>
+                <p><strong>Speicherung:</strong> maximal 5 Jahre, sofern kein Löschersuchen des Kunden vorliegt.<br>
+                <strong>Löschung:</strong> Kunden können jederzeit die Löschung ihrer Daten oder Materialien verlangen.<br>
+                <strong>Portfolio:</strong> Sofern keine direkte Löschung verlangt wird, dürfen Videos für Referenz- und Portfoliozwecke genutzt werden.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>5. Storage and Deletion</h2>
+                <p>Customer data and video material are stored locally on an external hard drive.</p>
+                <p><strong>Storage:</strong> maximum 5 years, unless the customer requests deletion.<br>
+                <strong>Deletion:</strong> Customers can request deletion of their data or materials at any time.<br>
+                <strong>Portfolio:</strong> Unless immediate deletion is requested, videos may be used for reference and portfolio purposes.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>6. Weitergabe an Dritte</h2>
+                <p>Daten werden nur an Dienstleister weitergegeben, die für die Durchführung des Projekts notwendig sind (z. B. Cloud-Speicher, externe Bearbeitung), und nur, soweit dies vertraglich oder technisch erforderlich ist. Eine Weitergabe zu anderen Zwecken erfolgt nicht.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>6. Disclosure to Third Parties</h2>
+                <p>Data is only shared with service providers necessary for project execution (e.g., cloud storage, external processing), and only to the extent contractually or technically required. Disclosure for other purposes does not occur.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>7. Rechte der Betroffenen</h2>
+                <p>Kunden haben jederzeit das Recht auf:</p>
+                <p>• Auskunft über die gespeicherten Daten<br>
+                • Berichtigung fehlerhafter Daten<br>
+                • Löschung ihrer personenbezogenen Daten<br>
+                • Widerruf einer Einwilligung, z. B. zur Portfolio-Nutzung</p>
+            </div>
+            <div class="section lang-en">
+                <h2>7. Rights of Data Subjects</h2>
+                <p>Customers have the right at any time to:</p>
+                <p>• Information about stored data<br>
+                • Correction of incorrect data<br>
+                • Deletion of their personal data<br>
+                • Revocation of consent, e.g., for portfolio use</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>8. Sicherheit</h2>
+                <p>Wir treffen angemessene technische und organisatorische Maßnahmen, um die Sicherheit personenbezogener Daten zu gewährleisten und unbefugten Zugriff zu verhindern.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>8. Security</h2>
+                <p>We implement appropriate technical and organizational measures to ensure the security of personal data and prevent unauthorized access.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>9. Änderungen dieser Erklärung</h2>
+                <p>Wir behalten uns das Recht vor, die Datenschutzerklärung anzupassen. Änderungen werden auf unserer Website veröffentlicht.</p>
+            </div>
+            <div class="section lang-en">
+                <h2>9. Changes to This Policy</h2>
+                <p>We reserve the right to update this privacy policy. Changes will be published on our website.</p>
+            </div>
+
+            <div class="section lang-de" style="display: none;">
+                <h2>10. DSGVO-Konformität</h2>
+                <p>Die Verarbeitung personenbezogener Daten erfolgt stets im Einklang mit der Datenschutz-Grundverordnung (DSGVO).</p>
+            </div>
+            <div class="section lang-en">
+                <h2>10. GDPR Compliance</h2>
+                <p>The processing of personal data is always carried out in accordance with the General Data Protection Regulation (GDPR).</p>
+            </div>
+        </div>
+
         <footer>
             <p>&copy; 2025 Jonas Hempel – Videoediting. <span class="lang-de" style="display: none;">Alle Rechte vorbehalten.</span><span class="lang-en">All rights reserved.</span></p>
             <p style="margin-top: 10px;">
@@ -261,6 +436,7 @@
     </div>
 
     <script>
+        // Language Toggle
         const langButtons = document.querySelectorAll('.lang-btn');
         const deLang = document.querySelectorAll('.lang-de');
         const enLang = document.querySelectorAll('.lang-en');
@@ -279,6 +455,25 @@
                     deLang.forEach(el => el.style.display = 'none');
                     enLang.forEach(el => el.style.display = '');
                 }
+            });
+        });
+
+        // Tab Navigation
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                document.getElementById(tabName + '-content').classList.add('active');
             });
         });
     </script>
