@@ -21,22 +21,31 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
+        }
+
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 5px;
+            z-index: 100;
         }
 
         header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .intro-text {
-            max-width: 700px;
-            margin: 0 auto 40px;
+            max-width: 650px;
+            margin: 0 auto 50px;
             text-align: center;
             color: #666;
-            font-size: 1.05rem;
-            line-height: 1.7;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         .header-actions {
@@ -105,7 +114,7 @@
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 700;
             color: #1a1a1a;
             margin-bottom: 20px;
@@ -201,11 +210,51 @@
 
         footer {
             text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
+            margin-top: 60px;
+            padding-top: 40px;
             border-top: 1px solid #e0e0e0;
             color: #666;
             font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        .footer-link:hover {
+            color: #2174EE;
+            border-color: #2174EE;
+        }
+
+        .footer-link.primary {
+            background: #2174EE;
+            color: white;
+            border-color: #2174EE;
+            font-weight: 600;
+        }
+
+        .footer-link.primary:hover {
+            background: #1a5dc9;
+            border-color: #1a5dc9;
         }
 
         @media (max-width: 768px) {
@@ -213,17 +262,27 @@
                 padding: 40px 15px;
             }
 
+            .language-toggle {
+                top: 15px;
+                right: 15px;
+            }
+
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
 
             .intro-text {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
 
-            .header-actions {
+            .footer-links {
                 flex-direction: column;
                 gap: 15px;
+            }
+
+            .footer-link {
+                width: 100%;
+                justify-content: center;
             }
 
             .content-box {
@@ -237,39 +296,25 @@
     </style>
 </head>
 <body>
+    <div class="language-toggle">
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn active" data-lang="en">EN</button>
+    </div>
+
     <div class="container">
         <header>
-            <h1 class="lang-de" style="display: none;">Media <span>Essentials</span></h1>
-            <h1 class="lang-en">Media <span>Essentials</span></h1>
+            <h1 class="lang-de" style="display: none;">Rechtliche <span>Informationen</span></h1>
+            <h1 class="lang-en">Legal <span>Information</span></h1>
             
             <p class="intro-text lang-de" style="display: none;">
-                Willkommen bei Media Essentials – deinem Partner für professionelles Videoediting. 
-                Hier findest du alle wichtigen Informationen zu meinen Leistungen, rechtliche Dokumente 
-                und Links zu meinen Projekten.
+                Hier findest du alle rechtlichen Informationen zu Media Essentials. 
+                Bei Fragen kannst du dich jederzeit per E-Mail an <strong>jonashempelb@gmx.de</strong> wenden.
             </p>
             <p class="intro-text lang-en">
-                Welcome to Media Essentials – your partner for professional video editing. 
-                Here you'll find all important information about my services, legal documents, 
-                and links to my projects.
+                Here you'll find all legal information about Media Essentials. 
+                If you have any questions, feel free to contact me via email at <strong>jonashempelb@gmx.de</strong>.
             </p>
         </header>
-
-        <div class="header-actions">
-            <a href="https://media-essentials.com/project-request" class="action-link primary" target="_blank">
-                <span class="lang-de" style="display: none;">Projekt anfragen</span>
-                <span class="lang-en">Request a Project</span>
-            </a>
-            <a href="https://www.instagram.com/media.essentials/" class="action-link" target="_blank">
-                <svg style="width: 18px; height: 18px;" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-                Instagram
-            </a>
-            <div class="language-toggle">
-                <button class="lang-btn" data-lang="de">DE</button>
-                <button class="lang-btn active" data-lang="en">EN</button>
-            </div>
-        </div>
 
         <div class="tab-navigation">
             <button class="tab-btn active" data-tab="agb">
@@ -485,6 +530,19 @@
         </div>
 
         <footer>
+            <div class="footer-links">
+                <a href="https://media-essentials.com/project-request" class="footer-link primary" target="_blank">
+                    <span class="lang-de" style="display: none;">Projekt anfragen</span>
+                    <span class="lang-en">Request a Project</span>
+                </a>
+                <a href="https://www.instagram.com/media.essentials/" class="footer-link" target="_blank">
+                    <svg style="width: 20px; height: 20px;" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    <span class="lang-de" style="display: none;">Instagram</span>
+                    <span class="lang-en">Instagram</span>
+                </a>
+            </div>
             <p>&copy; 2025 Jonas Hempel – Videoediting. <span class="lang-de" style="display: none;">Alle Rechte vorbehalten.</span><span class="lang-en">All rights reserved.</span></p>
         </footer>
     </div>
