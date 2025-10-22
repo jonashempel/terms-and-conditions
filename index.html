@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms and Conditions - Media Essentials</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Media Essentials - Jonas Hempel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,61 +13,42 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Funnel Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
             color: #333;
             line-height: 1.6;
-            padding-top: 80px;
+            padding: 60px 20px;
         }
 
-        .top-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            z-index: 1000;
-            padding: 15px 0;
-        }
-
-        .header-container {
-            max-width: 1200px;
+        .container {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .intro-text {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            text-align: center;
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .header-actions {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo {
-            font-size: 2rem;
-            line-height: 1;
-        }
-
-        .brand-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1a1a1a;
-        }
-
-        .brand-name span {
-            color: #2174EE;
-        }
-
-        .header-links {
-            display: flex;
+            justify-content: center;
             align-items: center;
             gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
         }
 
-        .header-link {
+        .action-link {
             color: #666;
             text-decoration: none;
             font-weight: 500;
@@ -78,8 +59,21 @@
             gap: 5px;
         }
 
-        .header-link:hover {
+        .action-link:hover {
             color: #2174EE;
+        }
+
+        .action-link.primary {
+            background: #2174EE;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .action-link.primary:hover {
+            background: #1a5dc9;
+            color: white;
         }
 
         .language-toggle {
@@ -88,12 +82,12 @@
         }
 
         .lang-btn {
-            padding: 4px 12px;
-            border: 1px solid #e0e0e0;
+            padding: 6px 14px;
+            border: 1px solid #ddd;
             background: white;
             color: #999;
             border-radius: 4px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -110,32 +104,15 @@
             border-color: #2174EE;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
         h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
             color: #1a1a1a;
-            margin-bottom: 8px;
+            margin-bottom: 20px;
         }
 
         h1 span {
             color: #2174EE;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            font-weight: 400;
         }
 
         .tab-navigation {
@@ -156,6 +133,7 @@
             cursor: pointer;
             position: relative;
             transition: color 0.3s ease;
+            font-family: 'Funnel Sans', sans-serif;
         }
 
         .tab-btn:hover {
@@ -188,7 +166,7 @@
             background: white;
             border-radius: 12px;
             padding: 50px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e8e8e8;
         }
 
         h2 {
@@ -232,30 +210,24 @@
 
         @media (max-width: 768px) {
             body {
-                padding-top: 140px;
+                padding: 40px 15px;
             }
 
-            .header-container {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+            }
+
+            .header-actions {
                 flex-direction: column;
                 gap: 15px;
             }
 
-            .header-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-
-            .container {
-                padding: 40px 15px;
-            }
-
             .content-box {
                 padding: 30px 20px;
-            }
-
-            h1 {
-                font-size: 2rem;
             }
 
             h2 {
@@ -265,43 +237,43 @@
     </style>
 </head>
 <body>
-    <div class="top-header">
-        <div class="header-container">
-            <div class="logo-section">
-                <div class="logo">:D</div>
-                <div class="brand-name">Media <span>Essentials</span></div>
-            </div>
-            
-            <div class="header-links">
-                <a href="https://tally.so/r/3E9xjq" class="header-link" target="_blank">
-                    <span class="lang-de" style="display: none;">Projekt anfragen</span>
-                    <span class="lang-en">Request Project</span>
-                </a>
-                <a href="https://www.instagram.com/media.essentials/" class="header-link" target="_blank">
-                    <svg style="width: 18px; height: 18px;" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                    Instagram
-                </a>
-                <div class="language-toggle">
-                    <button class="lang-btn" data-lang="de">DE</button>
-                    <button class="lang-btn active" data-lang="en">EN</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="container">
         <header>
-            <h1 class="lang-de" style="display: none;">Allgemeine <span>Geschäftsbedingungen</span></h1>
-            <h1 class="lang-en">Terms and <span>Conditions</span></h1>
-            <p class="subtitle lang-de" style="display: none;">Jonas Hempel – Videoediting</p>
-            <p class="subtitle lang-en">Jonas Hempel – Video Editing</p>
+            <h1 class="lang-de" style="display: none;">Media <span>Essentials</span></h1>
+            <h1 class="lang-en">Media <span>Essentials</span></h1>
+            
+            <p class="intro-text lang-de" style="display: none;">
+                Willkommen bei Media Essentials – deinem Partner für professionelles Videoediting. 
+                Hier findest du alle wichtigen Informationen zu meinen Leistungen, rechtliche Dokumente 
+                und Links zu meinen Projekten.
+            </p>
+            <p class="intro-text lang-en">
+                Welcome to Media Essentials – your partner for professional video editing. 
+                Here you'll find all important information about my services, legal documents, 
+                and links to my projects.
+            </p>
         </header>
+
+        <div class="header-actions">
+            <a href="https://media-essentials.com/project-request" class="action-link primary" target="_blank">
+                <span class="lang-de" style="display: none;">Projekt anfragen</span>
+                <span class="lang-en">Request a Project</span>
+            </a>
+            <a href="https://www.instagram.com/media.essentials/" class="action-link" target="_blank">
+                <svg style="width: 18px; height: 18px;" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                Instagram
+            </a>
+            <div class="language-toggle">
+                <button class="lang-btn" data-lang="de">DE</button>
+                <button class="lang-btn active" data-lang="en">EN</button>
+            </div>
+        </div>
 
         <div class="tab-navigation">
             <button class="tab-btn active" data-tab="agb">
-                <span class="lang-de" style="display: none;">AGB</span>
+                <span class="lang-de" style="display: none;">Geschäftsbedingungen</span>
                 <span class="lang-en">Terms & Conditions</span>
             </button>
             <button class="tab-btn" data-tab="privacy">
