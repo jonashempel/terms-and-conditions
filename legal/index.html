@@ -34,6 +34,22 @@
             z-index: 100;
         }
 
+        .back-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: #999;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-link:hover {
+            color: #666;
+        }
+
         header {
             text-align: center;
             margin-bottom: 50px;
@@ -262,6 +278,12 @@
                 padding: 40px 15px;
             }
 
+            .back-link {
+                top: 15px;
+                left: 15px;
+                font-size: 0.85rem;
+            }
+
             .language-toggle {
                 top: 15px;
                 right: 15px;
@@ -296,6 +318,8 @@
     </style>
 </head>
 <body>
+    <a href="https://media-essentials.com" class="back-link">← back</a>
+    
     <div class="language-toggle">
         <button class="lang-btn" data-lang="de">DE</button>
         <button class="lang-btn active" data-lang="en">EN</button>
@@ -531,7 +555,7 @@
 
         <footer>
             <div class="footer-links">
-                <a href="https://tally.so/r/3E9xjq" class="footer-link primary" target="_blank">
+                <a href="https://media-essentials.com/project-request" class="footer-link primary" target="_blank">
                     <span class="lang-de" style="display: none;">Projekt anfragen</span>
                     <span class="lang-en">Request a Project</span>
                 </a>
