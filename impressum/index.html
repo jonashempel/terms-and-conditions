@@ -1,136 +1,344 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impressum – Media Essentials</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | Media Essentials</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <style>
-    /* ========== Grundlayout ========== */
-    :root {
-      --accent: #2174EE;
-      --text: #1a1a1a;
-      --muted: #666;
-      --border: #e0e0e0;
-      --bg: #ffffff;
-      --font: 'Funnel Sans', system-ui, Arial, sans-serif;
-    }
+        body {
+            font-family: 'Funnel Sans', sans-serif;
+            background-color: #ffffff;
+            color: #444;
+            line-height: 1.6;
+            padding: 80px 20px 40px;
+        }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font);
-      line-height: 1.6;
-    }
+        .back-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: #999;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            z-index: 100;
+        }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+        .back-link:hover {
+            color: #666;
+        }
 
-    /* ========== Navigation / Back Button ========== */
-    header {
-      display: flex;
-      align-items: center;
-      padding: 2rem;
-    }
+        .language-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
 
-    .back-link {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
+        .lang-btn {
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            font-family: 'Funnel Sans', sans-serif;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #ffffff;
+            color: #999;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
 
-    .back-link:hover {
-      color: #0e5edb;
-    }
+        .lang-btn.active {
+            background-color: #2174EE;
+            color: #ffffff;
+            border-color: #2174EE;
+        }
 
-    .back-link::before {
-      content: "←";
-      font-size: 1.1rem;
-    }
+        .lang-btn:hover:not(.active) {
+            border-color: #999;
+            color: #666;
+        }
 
-    /* ========== Hauptinhalt ========== */
-    main {
-      flex: 1;
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 2rem;
-      text-align: left;
-    }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-    h1 {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: var(--text);
-      text-align: center;
-    }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
-    p {
-      margin-bottom: 1rem;
-      font-size: 1rem;
-    }
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
 
-    address {
-      font-style: normal;
-      line-height: 1.6;
-    }
+        .header h1 .highlight {
+            color: #2174EE;
+        }
 
-    /* ========== Footer ========== */
-    footer {
-      border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
+        .header p {
+            color: #666;
+            font-size: 1rem;
+        }
 
-    /* ========== Responsive ========== */
-    @media (max-width: 600px) {
-      header {
-        padding: 1.5rem;
-      }
+        .content-box {
+            background-color: #ffffff;
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 50px;
+        }
 
-      main {
-        padding: 1.5rem;
-      }
+        .content-section {
+            margin-bottom: 30px;
+        }
 
-      h1 {
-        font-size: 1.6rem;
-      }
-    }
-  </style>
+        .content-section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            display: inline-block;
+            border-bottom: 2px solid #2174EE;
+            padding-bottom: 5px;
+        }
+
+        .content-section:first-child h2 {
+            margin-top: 0;
+        }
+
+        .content-section p {
+            color: #444;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .content-section strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .content-section a {
+            color: #2174EE;
+            text-decoration: none;
+        }
+
+        .content-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 100px 15px 30px;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-box {
+                padding: 30px 25px;
+            }
+
+            .content-section h2 {
+                font-size: 1.2rem;
+            }
+
+            .content-section p {
+                font-size: 0.95rem;
+            }
+
+            .back-link {
+                top: 15px;
+                left: 15px;
+                font-size: 0.85rem;
+            }
+
+            .language-switch {
+                top: 15px;
+                right: 15px;
+            }
+
+            .lang-btn {
+                padding: 5px 12px;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <a href="index.html" class="back-link">Zurück</a>
-  </header>
+    <a href="https://www.media-essentials.com" class="back-link">← back</a>
 
-  <main>
-    <h1>Impressum</h1>
-    <address>
-      Jonas Hempel<br />
-      Matrosenweg 11<br />
-      18147 Rostock<br /><br />
+    <div class="language-switch">
+        <button class="lang-btn active" data-lang="de">DE</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+    </div>
 
-      Telefon: <a href="tel:+4915168445724" style="color: var(--accent); text-decoration: none;">+49 15168445724</a><br />
-      E-Mail: <a href="mailto:jonashempelb@gmx.de" style="color: var(--accent); text-decoration: none;">jonashempelb@gmx.de</a><br /><br />
-    </address>
-  </main>
+    <div class="container">
+        <!-- German Content -->
+        <div class="lang-content active" data-lang="de">
+            <div class="header">
+                <h1>Impre<span class="highlight">ssum</span></h1>
+                <p>Angaben gemäß § 5 TMG</p>
+            </div>
 
-  <footer>
-    © 2025 Media Essentials. All rights reserved.
-  </footer>
+            <div class="content-box">
+                <div class="content-section">
+                    <h2>Angaben gemäß § 5 TMG</h2>
+                    <p>
+                        <strong>Jonas Hempel</strong><br>
+                        Matrosenweg 11<br>
+                        18147 Rostock<br>
+                        Deutschland
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h2>Kontakt</h2>
+                    <p>
+                        <strong>Telefon:</strong> <a href="tel:+4915168445724">+49 15168445724</a><br>
+                        <strong>E-Mail:</strong> <a href="mailto:jonashempelb@gmx.de">jonashempelb@gmx.de</a>
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+                    <p>
+                        <strong>Jonas Hempel</strong><br>
+                        Matrosenweg 11<br>
+                        18147 Rostock
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h2>Haftungsausschluss</h2>
+                    <p><strong>Haftung für Inhalte</strong></p>
+                    <p>
+                        Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
+                    </p>
+                    <p><strong>Haftung für Links</strong></p>
+                    <p>
+                        Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>© 2025 Jonas Hempel – Videoediting. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+
+        <!-- English Content -->
+        <div class="lang-content" data-lang="en">
+            <div class="header">
+                <h1>Imp<span class="highlight">rint</span></h1>
+                <p>Information according to § 5 TMG</p>
+            </div>
+
+            <div class="content-box">
+                <div class="content-section">
+                    <h2>Information according to § 5 TMG</h2>
+                    <p>
+                        <strong>Jonas Hempel</strong><br>
+                        Matrosenweg 11<br>
+                        18147 Rostock<br>
+                        Germany
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h2>Contact</h2>
+                    <p>
+                        <strong>Phone:</strong> <a href="tel:+4915168445724">+49 15168445724</a><br>
+                        <strong>Email:</strong> <a href="mailto:jonashempelb@gmx.de">jonashempelb@gmx.de</a>
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h2>Responsible for content according to § 55 Abs. 2 RStV</h2>
+                    <p>
+                        <strong>Jonas Hempel</strong><br>
+                        Matrosenweg 11<br>
+                        18147 Rostock
+                    </p>
+                </div>
+
+                <div class="content-section">
+                    <h2>Disclaimer</h2>
+                    <p><strong>Liability for content</strong></p>
+                    <p>
+                        The contents of our pages have been created with the greatest care. However, we cannot guarantee the accuracy, completeness and timeliness of the content.
+                    </p>
+                    <p><strong>Liability for links</strong></p>
+                    <p>
+                        Our offer contains links to external third-party websites over whose content we have no influence. Therefore, we cannot assume any liability for this third-party content. The respective provider or operator of the pages is always responsible for the content of the linked pages.
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>© 2025 Media Essentials. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const langContents = document.querySelectorAll('.lang-content');
+
+        langButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedLang = button.getAttribute('data-lang');
+                
+                // Update active button
+                langButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Update content
+                langContents.forEach(content => {
+                    if (content.getAttribute('data-lang') === selectedLang) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+
+                // Update page language
+                document.documentElement.lang = selectedLang;
+            });
+        });
+    </script>
 </body>
 </html>
