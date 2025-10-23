@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum – Media Essentials</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ========== Grundlayout ========== */
+    :root {
+      --accent: #2174EE;
+      --text: #1a1a1a;
+      --muted: #666;
+      --border: #e0e0e0;
+      --bg: #ffffff;
+      --font: 'Funnel Sans', system-ui, Arial, sans-serif;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.6;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ========== Navigation / Back Button ========== */
+    header {
+      display: flex;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .back-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .back-link:hover {
+      color: #0e5edb;
+    }
+
+    .back-link::before {
+      content: "←";
+      font-size: 1.1rem;
+    }
+
+    /* ========== Hauptinhalt ========== */
+    main {
+      flex: 1;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: left;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    address {
+      font-style: normal;
+      line-height: 1.6;
+    }
+
+    /* ========== Footer ========== */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* ========== Responsive ========== */
+    @media (max-width: 600px) {
+      header {
+        padding: 1.5rem;
+      }
+
+      main {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="back-link">Zurück</a>
+  </header>
+
+  <main>
+    <h1>Impressum</h1>
+    <address>
+      Jonas Hempel<br />
+      Matrosenweg 11<br />
+      18147 Rostock<br /><br />
+
+      Telefon: <a href="tel:+4915168445724" style="color: var(--accent); text-decoration: none;">+49 15168445724</a><br />
+      E-Mail: <a href="mailto:jonashempelb@gmx.de" style="color: var(--accent); text-decoration: none;">jonashempelb@gmx.de</a><br /><br />
+
+      Quelle: <a href="https://www.e-recht24.de" target="_blank" style="color: var(--accent); text-decoration: none;">www.e-recht24.de</a>
+    </address>
+  </main>
+
+  <footer>
+    © 2025 Jonas Hempel – Videoediting. All rights reserved.
+  </footer>
+</body>
+</html>
