@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Essentials</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Funnel Sans', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .language-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .lang-btn {
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            background-color: #ffffff;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Funnel Sans', sans-serif;
+        }
+
+        .lang-btn.active {
+            background-color: #2174EE;
+            color: #ffffff;
+            border-color: #2174EE;
+        }
+
+        .lang-btn:hover:not(.active) {
+            border-color: #2174EE;
+            color: #2174EE;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .title-black {
+            color: #1a1a1a;
+        }
+
+        .title-blue {
+            color: #2174EE;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #666;
+        }
+
+        .buttons {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 18px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            font-family: 'Funnel Sans', sans-serif;
+            cursor: pointer;
+        }
+
+        .main-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .btn-primary {
+            background-color: #f3f7fe;
+            color: #2174EE;
+            border: 3px solid #2174EE;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #2174EE;
+            color: #ffffff;
+            box-shadow: 0 0 0 5px rgba(33, 116, 238, 0.37);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #2174EE;
+            color: #ffffff;
+            border: 3px solid #2174EE;
+            position: relative;
+            padding-right: 3.5em;
+            overflow: hidden;
+            box-shadow: inset 0 0 1.6em -0.6em #1a5dc9;
+        }
+
+        .btn-secondary .icon {
+            background: white;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: calc(100% - 0.6em);
+            width: 2.4em;
+            border-radius: 0.6em;
+            box-shadow: 0.1em 0.1em 0.6em 0.2em #1a5dc9;
+            right: 0.3em;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary .icon svg {
+            width: 1.2em;
+            height: 1.2em;
+            transition: transform 0.3s ease;
+            color: #2174EE;
+        }
+
+        .btn-secondary:hover {
+            background-color: #2174EE;
+            border-color: #2174EE;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary:hover .icon {
+            width: calc(100% - 0.6em);
+        }
+
+        .btn-secondary:hover .icon svg {
+            transform: translateX(0.1em);
+        }
+
+        .btn-secondary:active .icon {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .btn-tertiary {
+            background-color: #ffffff;
+            color: #888;
+            border: 2px solid #e0e0e0;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .btn-tertiary:hover {
+            background-color: #fafafa;
+            border-color: #c0c0c0;
+            color: #666;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 25px 20px;
+            border-top: 1px solid #e0e0e0;
+            margin-top: auto;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 400;
+        }
+
+        @media (max-width: 600px) {
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .btn {
+                font-size: 1rem;
+                padding: 16px 24px;
+            }
+
+            .container {
+                padding: 80px 20px 40px;
+            }
+
+            .header {
+                margin-bottom: 40px;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Animation Styles */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .header {
+            animation: fadeInScale 0.8s ease-out;
+        }
+
+        .btn {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .btn:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .btn:nth-child(2) {
+            animation-delay: 0.45s;
+        }
+
+        .btn-tertiary {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+            animation-delay: 0.7s;
+        }
+
+        footer {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+            animation-delay: 0.9s;
+        }
+
+        .language-switch {
+            opacity: 0;
+            animation: slideInRight 0.6s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-switch">
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn active" data-lang="en">EN</button>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <span class="title-black">Media</span>
+                <span class="title-blue">Essentials</span>
+            </h1>
+            <p class="subtitle" data-de="Videoediting & Motiondesign" data-en="Video Editing & Motion Design">Video Editing & Motion Design</p>
+        </header>
+
+        <div class="buttons">
+            <div class="main-buttons">
+                <a href="https://media-essentials.com/project-request" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                    <span data-de="Projekt anfragen" data-en="Request a project">Request a project</span>
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </span>
+                </a>
+                <a href="https://www.instagram.com/media.essentials/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    <span data-de="Meine bisherigen Arbeiten" data-en="My previous work">My previous work</span>
+                </a>
+            </div>
+            <a href="https://media-essentials.com/legal" class="btn btn-tertiary" target="_blank" rel="noopener noreferrer">
+                <span data-de="Rechtliches" data-en="Legal">Legal</span>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-text" data-de="© 2025 Jonas Hempel – Videoediting. Alle Rechte vorbehalten." data-en="© 2025 Jonas Hempel – Video Editing. All rights reserved.">© 2025 Jonas Hempel – Video Editing. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const translatedElements = document.querySelectorAll('[data-de][data-en]');
+        let currentLang = 'en';
+
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.dataset.lang;
+                if (lang === currentLang) return;
+
+                currentLang = lang;
+
+                langButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                translatedElements.forEach(el => {
+                    el.textContent = el.dataset[lang];
+                });
+
+                document.documentElement.lang = lang;
+            });
+        });
+
+        // Set initial language to English
+        document.documentElement.lang = 'en';
+    </script>
+</body>
+</html>
